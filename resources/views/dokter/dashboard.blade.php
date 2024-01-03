@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>@if ($jadwalSaya == null)
-                                            Belum Ada Jadwal
+                                            No Schedule Yet
                                             @else
                                             {{ $jadwalSaya->hari }}
                                         @endif</h6>
@@ -44,7 +44,7 @@
                     <div class="col-xxl-4 col-md-6">
                         <div class="card info-card revenue-card">
                             <div class="card-body">
-                                <h5 class="card-title">Jam Mulai <span>| WIB</span></h5>
+                                <h5 class="card-title">Opening Hour <span>| UTC+7</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="ps-3">
                                         <h6>@if ($jadwalSaya == null)
-                                            Belum Ada Jadwal
+                                        No Schedule Yet
                                             @else
                                             {{ $jadwalSaya->jam_mulai }}
                                         @endif</h6>
@@ -67,7 +67,7 @@
                     <div class="col-xxl-4 col-xl-12">
                         <div class="card info-card customers-card">
                             <div class="card-body">
-                                <h5 class="card-title">Jam Selesai <span>| WIB</span></h5>
+                                <h5 class="card-title">Closing Hour <span>| UTC+7</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -76,7 +76,7 @@
                                     <div class="ps-3">
                                         <h6>
                                             @if ($jadwalSaya == null)
-                                                Belum Ada Jadwal
+                                            No Schedule Yet
                                             @else
                                                 {{ $jadwalSaya->jam_selesai }}
                                             @endif
