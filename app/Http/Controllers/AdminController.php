@@ -44,12 +44,12 @@ class AdminController extends Controller
 
         $email = Auth::where('email', $request->input('email'))->first();
         if ($email) {
-            return redirect()->back()->with('error', 'Email sudah terdaftar!');
+            return redirect()->back()->with('error', 'that email have already registered');
         }
 
         // cek apakah password lebih dari 6 karakter
         if (strlen($request->input('password')) < 6) {
-            return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+            return redirect()->back()->with('error', 'longer password please');
         }
 
         // Simpan ke tabel Akun
@@ -66,7 +66,7 @@ class AdminController extends Controller
             'alamat' => $request->input('alamat'),
             'no_hp' => $request->input('no_hp')
         ]);
-        return redirect()->route('admin.manage_dokter')->with('success', 'Dokter berhasil ditambahkan!');
+        return redirect()->route('admin.manage_dokter')->with('success', 'New Doctor? yay!');
     }
 
     public function deleteDokter($id)
@@ -77,7 +77,7 @@ class AdminController extends Controller
         // delete akun where id = $id
         $akun = Auth::where('id', $id)->first();
         $akun->delete();
-        return redirect()->route('admin.manage_dokter')->with('success', 'Dokter berhasil dihapus!');
+        return redirect()->route('admin.manage_dokter')->with('success', 'Doctor is Gone, i repeat Doctor is gone');
     }
 
     public function showEditDokterForm($id)
@@ -111,12 +111,12 @@ class AdminController extends Controller
         if ($request->input('password-baru') != null) {
             // cek apakah password lebih dari 6 karakter
             if (strlen($request->input('password-baru')) < 6) {
-                return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+                return redirect()->back()->with('error', 'Longer password! please!');
             } else {
                 // cek apakah password lama benar
                 $akun = Auth::where('id', $id)->first();
                 if (!password_verify($request->input('password-lama'), $akun->password)) {
-                    return redirect()->back()->with('error', 'Password salah!');
+                    return redirect()->back()->with('error', 'wrong password man');
                 }
                 $akun->update([
                     'email' => $request->input('email'),
@@ -129,9 +129,9 @@ class AdminController extends Controller
             ]);
         }
         if ($session['role'] == 'dokter') {
-            return redirect()->back()->with('success', 'Data berhasil diubah!');
+            return redirect()->back()->with('success', 'the data have been changed!');
         } else if ($session['role'] == 'admin') {
-            return redirect()->route('admin.manage_dokter')->with('success', 'Dokter berhasil diubah!');
+            return redirect()->route('admin.manage_dokter')->with('success', 'the doctor have changed?');
         }
     }
 
@@ -154,7 +154,7 @@ class AdminController extends Controller
             'nama_poli' => $request->input('nama_poli'),
             'keterangan' => $request->input('keterangan'),
         ]);
-        return redirect()->route('admin.manage_poli')->with('success', 'Poli berhasil ditambahkan!');
+        return redirect()->route('admin.manage_poli')->with('success', 'No way! new clinic!');
     }
 
     public function deletePoli($id)
@@ -162,7 +162,7 @@ class AdminController extends Controller
         // delete poli where id = $id
         $poli = Poli::where('id', $id)->first();
         $poli->delete();
-        return redirect()->route('admin.manage_poli')->with('success', 'Poli berhasil dihapus!');
+        return redirect()->route('admin.manage_poli')->with('success', '-1 clinic at this point');
     }
 
     public function showEditPoliForm($id)
@@ -181,7 +181,7 @@ class AdminController extends Controller
             'nama_poli' => $request->input('nama_poli'),
             'keterangan' => $request->input('keterangan'),
         ]);
-        return redirect()->route('admin.manage_poli')->with('success', 'Poli berhasil diubah!');
+        return redirect()->route('admin.manage_poli')->with('success', 'the clinic has changed?!');
     }
 
     public function showObatForm()
@@ -204,7 +204,7 @@ class AdminController extends Controller
             'kemasan' => $request->input('kemasan'),
             'harga' => $request->input('harga'),
         ]);
-        return redirect()->route('admin.manage_obat')->with('success', 'Obat berhasil ditambahkan!');
+        return redirect()->route('admin.manage_obat')->with('success', 'New drugs baby!');
     }
 
     public function deleteObat($id)
@@ -212,7 +212,7 @@ class AdminController extends Controller
         // delete obat where id = $id
         $obat = Obat::where('id', $id)->first();
         $obat->delete();
-        return redirect()->route('admin.manage_obat')->with('success', 'Obat berhasil dihapus!');
+        return redirect()->route('admin.manage_obat')->with('success', 'We lost on that one!');
     }
 
     public function showEditObatForm($id)
@@ -232,7 +232,7 @@ class AdminController extends Controller
             'kemasan' => $request->input('kemasan'),
             'harga' => $request->input('harga'),
         ]);
-        return redirect()->route('admin.manage_obat')->with('success', 'Obat berhasil diubah!');
+        return redirect()->route('admin.manage_obat')->with('success', 'the drug have been updated!');
     }
 
     public function showPasienForm()
@@ -254,18 +254,18 @@ class AdminController extends Controller
         // cek apakah no ktp sudah terdaftar
         $no_ktp = Pasien::where('no_ktp', $request->input('no_ktp'))->first();
         if ($no_ktp) {
-            return redirect()->back()->with('error', 'No KTP sudah terdaftar!');
+            return redirect()->back()->with('error', 'the ID number have already registered');
         }
 
         // cek apakah email sudah terdaftar
         $email = Auth::where('email', $request->input('email'))->first();
         if ($email) {
-            return redirect()->back()->with('error', 'Email sudah terdaftar!');
+            return redirect()->back()->with('error', 'your email have already registered!');
         }
 
         // cek apakah password lebih dari 6 karakter
         if (strlen($request->input('password')) < 6) {
-            return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+            return redirect()->back()->with('error', 'longer one please?');
         }
 
         // Simpan ke tabel Akun
@@ -289,7 +289,7 @@ class AdminController extends Controller
             'no_ktp' => $request->input('no_ktp'),
             'no_rm' => $no_rm, // Assign the generated no_rm
         ]);
-        return redirect()->route('admin.manage_pasien')->with('success', 'Pasien berhasil ditambahkan!');
+        return redirect()->route('admin.manage_pasien')->with('success', 'new patient lets gooo');
     }
 
     public function deletePasien($id)
@@ -300,7 +300,7 @@ class AdminController extends Controller
         // delete akun where id = $id
         $akun = Auth::where('id', $id)->first();
         $akun->delete();
-        return redirect()->route('admin.manage_pasien')->with('success', 'Pasien berhasil dihapus!');
+        return redirect()->route('admin.manage_pasien')->with('success', 'he is already recovered, bye bye');
     }
 
     public function showEditPasienForm($id)
@@ -327,12 +327,12 @@ class AdminController extends Controller
         if ($request->input('password-baru') != null) {
             // cek apakah password lebih dari 6 karakter
             if (strlen($request->input('password-baru')) < 6) {
-                return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+                return redirect()->back()->with('error', 'Longer. Password. Now!');
             } else {
                 // cek apakah password lama benar
                 $akun = Auth::where('id', $id)->first();
                 if (!password_verify($request->input('password-lama'), $akun->password)) {
-                    return redirect()->back()->with('error', 'Password salah!');
+                    return redirect()->back()->with('error', 'wrong password');
                 }
                 $akun->update([
                     'email' => $request->input('email'),
@@ -344,6 +344,6 @@ class AdminController extends Controller
                 'email' => $request->input('email'),
             ]);
         }
-        return redirect()->route('admin.manage_pasien')->with('success', 'Pasien berhasil diubah!');
+        return redirect()->route('admin.manage_pasien')->with('success', 'the patient has changed.. what?');
     }
 }

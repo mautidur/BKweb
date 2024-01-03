@@ -27,7 +27,7 @@ class CheckRole
         }
 
         if (!$authorized) {
-            abort(403, 'Unauthorized');
+            abort(403, 'Uh Oh.. Whos this?');
         }
 
         return $next($request);

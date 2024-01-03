@@ -2,12 +2,12 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Data Dokter</h1>
+        <h1>Doctor List</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item">Admin</li>
-                <li class="breadcrumb-item active">Data Dokter</li>
+                <li class="breadcrumb-item active">Doctor Data</li>
             </ol>
         </nav>
     </div>
@@ -18,19 +18,19 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Daftar Para Dokter</h5>
+                        <h5 class="card-title">List of Doctor</h5>
 
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama</th>
+                                    <th scope="col">Number</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Nomor Hp</th>
-                                    <th scope="col">Alamat</th>
-                                    <th scope="col">Nama Poli</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Clinic</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,7 +53,7 @@
                                             <form method="POST" action="{{ route('admin.delete_dokter', ['id' => $dokter->id]) }}" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

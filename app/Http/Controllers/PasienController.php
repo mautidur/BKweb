@@ -21,14 +21,6 @@ class PasienController extends Controller
 
         $jadwalUnik = [];
         foreach ($jadwal as $key => $value) {
-            // cek id jadwal yang unik
-            // $cekIdJadwal = DaftarPoli::join('jadwal_periksa', 'daftar_poli.id_jadwal', '=', 'jadwal_periksa.id')
-            //     ->join('dokter', 'jadwal_periksa.id_dokter', '=', 'dokter.id')
-            //     ->join('poli', 'dokter.id_poli', '=', 'poli.id')
-            //     ->where('daftar_poli.id_pasien', $pasien->id)
-            //     ->where('jadwal_periksa.id', $value->id_jadwal)
-            //     ->select('daftar_poli.id_jadwal')
-            //     ->first();
             $cekAntrianPerPoli = Jadwal::join('dokter', 'jadwal_periksa.id_dokter', '=', 'dokter.id')
                 ->join('poli', 'dokter.id_poli', '=', 'poli.id')
                 ->join('daftar_poli', 'jadwal_periksa.id', '=', 'daftar_poli.id_jadwal')
@@ -53,8 +45,6 @@ class PasienController extends Controller
                 'namaDokter' => $namaPoli->nama
             ];
         }
-
-        // dd($jadwalUnik);
 
         return view('pasien.dashboard')->with(compact('session', 'pasien', 'jadwal', 'jadwalUnik'));
     }
@@ -85,7 +75,7 @@ class PasienController extends Controller
                 'no_antrian' => $no_antrian,
                 'status' => 'daftar'
             ]);
-            return redirect()->route('pasien.dashboard.form')->with('success', 'Pendaftaran Berhasil');
+            return redirect()->route('pasien.dashboard.form')->with('success', 'Registration Success!');
         }
     }
 }

@@ -2,7 +2,7 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>Hello Administrator!</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
@@ -22,7 +22,7 @@
                         <div class="card info-card sales-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Dokter</h5>
+                                <h5 class="card-title">Doctors</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -42,7 +42,7 @@
                         <div class="card info-card revenue-card">
 
                             <div class="card-body">
-                                <h5 class="card-title">Pasien </h5>
+                                <h5 class="card-title">Patients</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -61,7 +61,7 @@
                     <div class="col-xxl-4 col-xl-12">
                         <div class="card info-card customers-card">
                             <div class="card-body">
-                                <h5 class="card-title">Obat <span>| varian</span></h5>
+                                <h5 class="card-title">Medicine <span>| variant</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">

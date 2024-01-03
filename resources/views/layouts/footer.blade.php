@@ -3,6 +3,7 @@
     <div class="copyright">
         &copy; Copyright <strong><span>NiceAdmin</span></strong
         >. All Rights Reserved
+        <br> please, let me sleep
     </div>
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->

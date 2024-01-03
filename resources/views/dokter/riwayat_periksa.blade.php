@@ -2,7 +2,7 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Riwayat Pasien</h1>
+        <h1>Patient History</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -18,18 +18,18 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Daftar Riwayat Pasien</h5>
+                        <h5 class="card-title">List of Patient History</h5>
 
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama Pasien</th>
-                                    <th scope="col">Keluhan</th>
-                                    <th scope="col">Tanggal Periksa</th>
-                                    <th scope="col">Obat</th>
-                                    <th scope="col">Catatan</th>
+                                    <th scope="col">Number</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Symptoms</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Medicine</th>
+                                    <th scope="col">Note</th>
                                 </tr>
                             </thead>
                             <tbody>

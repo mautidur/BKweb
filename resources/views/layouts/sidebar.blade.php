@@ -7,56 +7,56 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.dashboard')}}">
                     <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                    <span>Admin Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-person-badge"></i><span>Dokter</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-person-badge"></i><span>Doctor</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{route('admin.manage_dokter')}}"> <i class="bi bi-circle"></i><span>Data Dokter</span> </a>
+                        <a href="{{route('admin.manage_dokter')}}"> <i class="bi bi-circle"></i><span>List Doctor</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.create_dokter')}}"> <i class="bi bi-circle"></i><span>Tambah Dokter</span> </a>
+                        <a href="{{route('admin.create_dokter')}}"> <i class="bi bi-circle"></i><span>Add Doctor</span> </a>
                     </li>
                 </ul>
             </li>
             <!-- End Components Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables1-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-person-badge"></i><span>Pasien</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#tables1-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-person-badge"></i><span>Patient</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="tables1-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{route('admin.manage_pasien')}}"> <i class="bi bi-circle"></i><span>Data Pasien</span> </a>
+                        <a href="{{route('admin.manage_pasien')}}"> <i class="bi bi-circle"></i><span>List Patient</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.create_pasien')}}"> <i class="bi bi-circle"></i><span>Tambah Pasien</span> </a>
+                        <a href="{{route('admin.create_pasien')}}"> <i class="bi bi-circle"></i><span>Add Patient</span> </a>
                     </li>
                 </ul>
             </li>
             <!-- End Tables Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-table"></i><span>Poli</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-table"></i><span>Polyclinics</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('admin.manage_poli')}}"> <i class="bi bi-circle"></i><span>Data Poli</span> </a>
+                        <a href="{{ route('admin.manage_poli')}}"> <i class="bi bi-circle"></i><span>List Polyclinics</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.create_poli')}}"> <i class="bi bi-circle"></i><span>Tambah Poli</span> </a>
+                        <a href="{{route('admin.create_poli')}}"> <i class="bi bi-circle"></i><span>Add Polyclinic</span> </a>
                     </li>
                 </ul>
             </li>
             <!-- End Forms Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-shield-x"></i><span>Obat</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-shield-x"></i><span>Medicine</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="tables-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{route('admin.manage_obat')}}"> <i class="bi bi-circle"></i><span>Data Obat</span> </a>
+                        <a href="{{route('admin.manage_obat')}}"> <i class="bi bi-circle"></i><span>List Medicine</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.create_obat')}}"> <i class="bi bi-circle"></i><span>Tambah Obat</span> </a>
+                        <a href="{{route('admin.create_obat')}}"> <i class="bi bi-circle"></i><span>Add Medicine</span> </a>
                     </li>
                 </ul>
             </li>
@@ -67,30 +67,30 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('dokter.dashboard')}}">
                     <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                    <span>Doctor Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-table"></i><span>Jadwal Periksa</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-table"></i><span>Exam Schedule</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('dokter.jadwal_saya', ['id' => $id_dokter->id]) }}"> <i class="bi bi-circle"></i><span>Jadwal Saya</span> </a>
+                        <a href="{{ route('dokter.jadwal_saya', ['id' => $id_dokter->id]) }}"> <i class="bi bi-circle"></i><span>My Schedule</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('dokter.create_jadwal.form')}}"> <i class="bi bi-circle"></i><span>Tambah Jadwal</span> </a>
+                        <a href="{{route('dokter.create_jadwal.form')}}"> <i class="bi bi-circle"></i><span>Add Schedule</span> </a>
                     </li>
                 </ul>
             </li>
             <!-- End Components Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-journal-text"></i><span>Periksa Pasien</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-journal-text"></i><span>Examinate Patient</span><i class="bi bi-chevron-down ms-auto"></i> </a>
                 <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{route('dokter.daftar_periksa')}}"> <i class="bi bi-circle"></i><span>Data Pemeriksaan</span> </a>
+                        <a href="{{route('dokter.daftar_periksa')}}"> <i class="bi bi-circle"></i><span>Examinate Data</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('dokter.riwayat_periksa')}}"> <i class="bi bi-circle"></i><span>Riwayat Pemeriksaan</span> </a>
+                        <a href="{{route('dokter.riwayat_periksa')}}"> <i class="bi bi-circle"></i><span>Examinate History</span> </a>
                     </li>
                 </ul>
             </li>

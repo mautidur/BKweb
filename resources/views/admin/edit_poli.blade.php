@@ -2,12 +2,12 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Edit Data Poli</h1>
+        <h1>Edit Polyclinic Data</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item">Admin</li>
-                <li class="breadcrumb-item active">Edit Poli</li>
+                <li class="breadcrumb-item active">Edit Polyclinic</li>
             </ol>
         </nav>
     </div>
@@ -33,19 +33,19 @@
                                 <div class="col-sm-12">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="nama_poli" name="nama_poli" placeholder="nama_poli" value="{{$poli->nama_poli}}" required/>
-                                        <label for="nama_poli">Nama Poli</label>
-                                        <div class="invalid-feedback">Masukkan nama poli</div>
+                                        <label for="nama_poli">Polyclinics Name</label>
+                                        <div class="invalid-feedback">name please..</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="keterangan" value="{{$poli->keterangan}}" required/>
-                                        <label for="keterangan">Keterangan</label>
-                                        <div class="invalid-feedback">Masukkan keterangan poli</div>
+                                        <label for="keterangan">Description</label>
+                                        <div class="invalid-feedback">please, dont leave it empty</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
                                 <div class="col-sm-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                 </div>
                             </div>
                         </form>

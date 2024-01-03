@@ -14,7 +14,7 @@
             @endif
             " class="logo d-flex align-items-center">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="" />
-                <span class="d-none d-lg-block">KLINIK SYARAF</span>
+                <span class="d-none d-lg-block">Anomalies.</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
@@ -66,7 +66,7 @@
                             @if (session()->has('role') && session('role') == 'dokter')
                                 <a class="dropdown-item d-flex align-items-center" href="{{route('admin.edit_dokter.form', $dokter->id)}}">
                                     <i class="bi bi-person"></i>
-                                    <span>Profil Saya</span>
+                                    <span>My Profile</span>
                                 </a>
                             @endif
                         </li>

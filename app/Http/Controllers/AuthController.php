@@ -24,18 +24,18 @@ class AuthController extends Controller
         // cek apakah no ktp sudah terdaftar
         $no_ktp = Pasien::where('no_ktp', $request->input('no_ktp'))->first();
         if ($no_ktp) {
-            return redirect()->back()->with('error', 'No KTP sudah terdaftar!');
+            return redirect()->back()->with('error', 'Your ID number have already registered!');
         }
 
         // cek apakah email sudah terdaftar
         $email = Auth::where('email', $request->input('email'))->first();
         if ($email) {
-            return redirect()->back()->with('error', 'Email sudah terdaftar!');
+            return redirect()->back()->with('error', ' Your Email have already registered!');
         }
 
         // cek apakah password lebih dari 6 karakter
         if (strlen($request->input('password')) < 6) {
-            return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+            return redirect()->back()->with('error', 'you need a longer password man!');
         }
 
         // Simpan ke tabel Akun
@@ -59,7 +59,7 @@ class AuthController extends Controller
             'no_rm' => $no_rm, // Assign the generated no_rm
         ]);
 
-        return redirect()->route('login')->with('success', 'Pendaftaran berhasil! Silakan login.');
+        return redirect()->route('login')->with('success', 'you have passed the registration, its time to login.');
     }
 
     public function login(Request $request)
@@ -72,14 +72,14 @@ class AuthController extends Controller
 
         // Jika akun tidak ditemukan
         if (!$akun) {
-            return redirect()->back()->with('error', 'Email tidak ditemukan!');
+            return redirect()->back()->with('error', 'I cant find your Email!');
         }
         // Jika password salah atau kurang dari 6 karakter
 
         if (strlen($request->input('password')) < 6) {
-            return redirect()->back()->with('error', 'Password minimal 6 karakter!');
+            return redirect()->back()->with('error', 'Longer password please!');
         } else if (!password_verify($request->input('password'), $akun->password)) {
-            return redirect()->back()->with('error', 'Password salah!');
+            return redirect()->back()->with('error', 'Wrong password!');
         }
         // Simpan informasi akun ke dalam session
         $request->session()->put('id', $akun->id);
@@ -102,6 +102,6 @@ class AuthController extends Controller
         $request->session()->forget('email');
         $request->session()->forget('role');
 
-        return redirect()->route('login')->with('success', 'Logout berhasil!');
+        return redirect()->route('login')->with('success', 'Noo, please come back :(');
     }
 }

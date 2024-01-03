@@ -2,7 +2,7 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Pemeriksaan Pasien</h1>
+        <h1>Patient Examination</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -18,16 +18,16 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Daftar Antrian Poli</h5>
+                        <h5 class="card-title">Polyclinics Queue</h5>
 
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">Antrian</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Keluhan</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col">Queue</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Symptom</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,7 +37,7 @@
                                         <td>{{ $antrean->nama }}</td>
                                         <td>{{ $antrean->keluhan }}</td>
                                         <td>
-                                            <a href="{{ route('dokter.periksa.form', $antrean->id_pendaftaran) }}" class="btn btn-primary btn-sm">Periksa</a>
+                                            <a href="{{ route('dokter.periksa.form', $antrean->id_pendaftaran) }}" class="btn btn-primary btn-sm">Examinate</a>
                                         </td>
                                     </tr>
                                 @endforeach

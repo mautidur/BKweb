@@ -2,12 +2,12 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Edit Data Obat</h1>
+        <h1>Edit Drugs Data</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item">Admin</li>
-                <li class="breadcrumb-item active">Edit Obat</li>
+                <li class="breadcrumb-item active">Edit Medicine</li>
             </ol>
         </nav>
     </div>
@@ -33,24 +33,24 @@
                                 <div class="col-sm-12">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="nama_obat" name="nama_obat" placeholder="nama_obat" value="{{$obat->nama_obat}}" required/>
-                                        <label for="nama_obat">Nama Obat</label>
-                                        <div class="invalid-feedback">Masukkan nama obat</div>
+                                        <label for="nama_obat">Medicine Name</label>
+                                        <div class="invalid-feedback">i'm really tired</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="kemasan" name="kemasan" placeholder="kemasan" value="{{$obat->kemasan}}" required/>
-                                        <label for="kemasan">Kemasan</label>
-                                        <div class="invalid-feedback">Masukkan kemasan obat</div>
+                                        <label for="kemasan">Packaging</label>
+                                        <div class="invalid-feedback">help...</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="number" class="form-control" id="harga" name="harga" placeholder="harga" value="{{$obat->harga}}" required/>
-                                        <label for="harga">Harga</label>
-                                        <div class="invalid-feedback">Masukkan harga obat</div>
+                                        <label for="harga">Price</label>
+                                        <div class="invalid-feedback">i need sleep</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
                                 <div class="col-sm-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                 </div>
                             </div>
                         </form>

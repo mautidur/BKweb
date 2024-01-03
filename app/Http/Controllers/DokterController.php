@@ -63,7 +63,7 @@ class DokterController extends Controller
         // halaman tidak dapat diakses jika dokter sudah memiliki jadwal
         $cariJadwal = Jadwal::where('id_dokter', $dokter->id)->first();
         if ($cariJadwal) {
-            return redirect()->route('dokter.jadwal_saya.form', $dokter->id)->with('error', 'Anda sudah memiliki jadwal');
+            return redirect()->route('dokter.jadwal_saya.form', $dokter->id)->with('error', 'you already scheduled');
         }
         return view('dokter.create_jadwal')->with(compact('session', 'dokter', 'id_dokter'));
     }
@@ -81,7 +81,7 @@ class DokterController extends Controller
             ->where('jam_selesai', $request->input('jam_selesai'))
             ->first();
         if ($jadwalSama) {
-            return redirect()->back()->with('error', 'Jadwal anda bertabrakan dengan jadwal dokter lain');
+            return redirect()->back()->with('error', 'please pick other schedule doc');
         }
         Jadwal::create([
             'id_dokter' => $dokter->id,
@@ -89,7 +89,7 @@ class DokterController extends Controller
             'jam_mulai' => $request->input('jam_mulai'),
             'jam_selesai' => $request->input('jam_selesai'),
         ]);
-        return redirect()->route('dokter.jadwal_saya.form', $id_dokter->id)->with('success', 'Jadwal berhasil ditambahkan');
+        return redirect()->route('dokter.jadwal_saya.form', $id_dokter->id)->with('success', 'new schedule, no way!');
     }
 
     public function editJadwal(Request $request, $id)
@@ -104,14 +104,14 @@ class DokterController extends Controller
             ->where('jam_selesai', $request->input('jam_selesai'))
             ->first();
         if ($jadwalSama) {
-            return redirect()->back()->with('error', 'Jadwal anda bertabrakan dengan jadwal dokter lain');
+            return redirect()->back()->with('error', 'this schedule has been taken, my bad');
         }
         $jadwal->update([
             'hari' => $request->input('hari'),
             'jam_mulai' => $request->input('jam_mulai'),
             'jam_selesai' => $request->input('jam_selesai'),
         ]);
-        return redirect()->route('dokter.jadwal_saya.form', $dokter->id)->with('success', 'Jadwal berhasil diubah');
+        return redirect()->route('dokter.jadwal_saya.form', $dokter->id)->with('success', 'Schedule changed!');
     }
 
     public function manageAntrian()
@@ -150,7 +150,7 @@ class DokterController extends Controller
         // cek apakah pasien sudah pernah diperiksa
         $cekPeriksa = Periksa::where('id_daftar_poli', $id)->first();
         if ($cekPeriksa) {
-            return redirect()->back()->with('success', 'Pasien sudah diperiksa');
+            return redirect()->back()->with('success', 'Examined successfully');
         }
         return view('dokter.periksa')->with(compact('session', 'dokter', 'id_dokter', 'id', 'obat', 'tgl_sekarang', 'pasien'));
     }
@@ -179,7 +179,7 @@ class DokterController extends Controller
 
         $periksa->obat()->attach($id_obat);
 
-        return redirect()->route('dokter.daftar_periksa')->with('success', 'Pasien Sudah Diperiksa', compact('session', 'dokter', 'id_dokter'));
+        return redirect()->route('dokter.daftar_periksa')->with('success', 'the patient is fine', compact('session', 'dokter', 'id_dokter'));
     }
 
     public function riwayatPeriksa()

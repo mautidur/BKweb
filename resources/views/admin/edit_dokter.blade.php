@@ -2,12 +2,12 @@
 @include('layouts.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Edit Data Dokter</h1>
+        <h1>Edit Doctor Data</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item">Admin</li>
-                <li class="breadcrumb-item active">Edit Dokter</li>
+                <li class="breadcrumb-item active">Edit Doctor</li>
             </ol>
         </nav>
     </div>
@@ -37,50 +37,50 @@
                                 <div class="col-sm-12">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="nama" name="nama" placeholder="nama" value="{{$dokter->nama}}" required/>
-                                        <label for="nama">Nama Lengkap</label>
-                                        <div class="invalid-feedback">Masukkan nama dokter </div>
+                                        <label for="nama">Full Name</label>
+                                        <div class="invalid-feedback">just this one</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" id="email" placeholder="email" name="email"value="{{$dokter->email}}" required/>
                                         <label for="email">Email</label>
-                                        <div class="invalid-feedback">Masukkan email yang valid</div>
+                                        <div class="invalid-feedback">real email pls</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="no_hp" value="{{$dokter->no_hp}}" required/>
-                                        <label for="no_hp">Nomor HP</label>
-                                        <div class="invalid-feedback">Masukkan nomor hp dokter</div>
+                                        <label for="no_hp">Phone Number</label>
+                                        <div class="invalid-feedback">what's your number anyway</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="password" class="form-control" id="password-lama" name="password-lama"/>
-                                        <label for="password-lama">Password Lama</label>
-                                        <div class="invalid-feedback">Masukkan password lama</div>
+                                        <label for="password-lama">Old Password</label>
+                                        <div class="invalid-feedback">the OLD one</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="password" class="form-control" id="password-baru" name="password-baru"/>
-                                        <label for="password-baru">Password Baru</label>
-                                        <div class="invalid-feedback">Masukkan password baru</div>
+                                        <label for="password-baru">New Password</label>
+                                        <div class="invalid-feedback">the NEW one</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control" placeholder="alamat" id="alamat" name="alamat" style="height: 100px" required>{{ $dokter->alamat }}</textarea>
-                                        <label for="alamat">Alamat</label>
-                                        <div class="invalid-feedback">Masukkan alamat dokter</div>
+                                        <label for="alamat">Address</label>
+                                        <div class="invalid-feedback">You know what? no..</div>
                                     </div>
 
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="poli" name="id_poli" aria-label="Floating label select example" required>
-                                            <option selected disabled>Pilih Poli</option>
+                                            <option selected disabled>Select Polyclinic</option>
                                             @foreach ($poli as $item)
                                                 <option value="{{$item['id']}}" @if ($item['id'] == $dokter->id_poli) selected @endif>{{ucwords(strtolower($item['nama_poli']))}}</option>
                                             @endforeach
                                         </select>
-                                        <label for="poli">Poli</label>
-                                        <div class="invalid-feedback">Pilih poli dokter</div>
+                                        <label for="poli">Polyclinic</label>
+                                        <div class="invalid-feedback">please select</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
                                 <div class="col-sm-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                 </div>
                             </div>
                         </form>
