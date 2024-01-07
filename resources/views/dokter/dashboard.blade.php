@@ -18,7 +18,7 @@
             <div class="col-lg-12">
                 <div class="row">
                     <!-- Sales Card -->
-                    <div class="col-xxl-4 col-md-6">
+                    <!-- <div class="col-xxl-4 col-md-6">
                         <div class="card info-card sales-card">
                             <div class="card-body">
                                 <h5 class="card-title">Day <span>| My Schedule</span></h5>
@@ -37,11 +37,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- End Sales Card -->
 
                     <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-6">
+                    <div class="col-xxl-6 col-md-6">
                         <div class="card info-card revenue-card">
                             <div class="card-body">
                                 <h5 class="card-title">Opening Hour <span>| UTC+7</span></h5>
@@ -64,7 +64,7 @@
                     <!-- End Revenue Card -->
 
                     <!-- Customers Card -->
-                    <div class="col-xxl-4 col-xl-12">
+                    <div class="col-xxl-6 col-xl-12">
                         <div class="card info-card customers-card">
                             <div class="card-body">
                                 <h5 class="card-title">Closing Hour <span>| UTC+7</span></h5>
